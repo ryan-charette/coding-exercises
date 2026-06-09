@@ -1,16 +1,18 @@
-import numpy as np
+import torch
+from typing import Tuple
 
-def momentum_optimizer(parameter, grad, velocity, learning_rate=0.01, momentum=0.9):
+def momentum_optimizer(parameter: torch.Tensor, grad: torch.Tensor, velocity: torch.Tensor, 
+                       learning_rate: float = 0.01, momentum: float = 0.9) -> Tuple[torch.Tensor, torch.Tensor]:
     """
     Update parameters using the momentum optimizer.
     Uses momentum to accelerate learning in relevant directions and dampen oscillations.
     Args:
-        parameter: Current parameter value
-        grad: Current gradient
-        velocity: Current velocity/momentum term
+        parameter: Current parameter value (torch.Tensor)
+        grad: Current gradient (torch.Tensor)
+        velocity: Current velocity/momentum term (torch.Tensor)
         learning_rate: Learning rate (default=0.01)
         momentum: Momentum coefficient (default=0.9)
     Returns:
         tuple: (updated_parameter, updated_velocity)
     """
-    return np.round(parameter, 5), np.round(velocity, 5)
+    pass
