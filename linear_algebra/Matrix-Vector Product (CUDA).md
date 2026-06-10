@@ -211,7 +211,8 @@ cudaMemcpy
 (
     d_vector, 
     vector.data(),
-    cols * sizeof(float),cudaMemcpyHostToDevice
+    cols * sizeof(float),
+    cudaMemcpyHostToDevice
 );
 ```
 Organize threads and blocks:
