@@ -297,7 +297,8 @@ std::vector<float> matrix_vector_product
     (
         d_vector,
         vector.data(),
-        cols * sizeof(float),cudaMemcpyHostToDevice
+        cols * sizeof(float),
+        cudaMemcpyHostToDevice
     );
 
     int threadsPerBlock = 256;
